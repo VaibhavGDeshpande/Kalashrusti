@@ -20,8 +20,8 @@ export const CartDrawer: React.FC = () => {
   // Generate WhatsApp order message for @_kalashrushti_
   const generateWhatsAppUrl = () => {
     let text = language === 'mr' 
-      ? `*नवीन ऑर्डर विचारणा (kalashrusti Order Inquiry)*\n\n`
-      : `*New Order Inquiry (kalashrusti)*\n\n`;
+      ? `*नवीन ऑर्डर विचारणा (Kalashrushti Order Inquiry)*\n\n`
+      : `*New Order Inquiry (Kalashrushti)*\n\n`;
 
     items.forEach((item, index) => {
       const name = language === 'mr' ? item.product.marathiName : item.product.name;

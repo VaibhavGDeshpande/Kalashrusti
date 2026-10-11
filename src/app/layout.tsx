@@ -28,11 +28,11 @@ const rozha = Rozha_One({
 });
 
 export const metadata: Metadata = {
-  title: 'कालाश्रुष्टी (kalashrusti) | हस्तकला – आनंदाचा सागर | Handmade Indian Crafts',
+  title: 'कालाश्रुष्टी (Kalashrushti) | हस्तकला – आनंदाचा सागर | Handmade Indian Crafts',
   description:
     'Handmade flowers, brass lamps (diva), kundan rangoli patches, Paithani silk table runners, and bespoke Diwali hampers. Handcrafted with love in Pune, India. Instagram: @_kalashrushti_',
   keywords: [
-    'kalashrusti',
+    'Kalashrushti',
     'कालाश्रुष्टी',
     'handcrafted lamps',
     'brass diya',
@@ -43,10 +43,10 @@ export const metadata: Metadata = {
     'Indian festive decor'
   ],
   openGraph: {
-    title: 'कालाश्रुष्टी (kalashrusti) | हस्तकला – आनंदाचा सागर',
+    title: 'कालाश्रुष्टी (Kalashrushti) | हस्तकला – आनंदाचा सागर',
     description: 'Festive handmade flowers, rangoli, lamps, runners, and custom Diwali hampers.',
     url: 'https://instagram.com/_kalashrushti_',
-    siteName: 'kalashrusti Handicrafts',
+    siteName: 'Kalashrushti Handicrafts',
     locale: 'en_IN',
     type: 'website',
   },

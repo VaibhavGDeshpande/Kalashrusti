@@ -13,7 +13,7 @@ export default function AdminFestivalBannerPage() {
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
     if (typeof window !== 'undefined') {
-      localStorage.setItem('kalashrusti_festival_banner', JSON.stringify(config));
+      localStorage.setItem('Kalashrushti_festival_banner', JSON.stringify(config));
     }
     setIsSaved(true);
     setTimeout(() => setIsSaved(false), 4000);

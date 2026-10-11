@@ -189,7 +189,7 @@ export const Navbar: React.FC = () => {
               {language === 'mr' ? (
                 <span>का ला श्रु ष्टी &nbsp;•&nbsp; ह स्त क ला</span>
               ) : (
-                <span>K A A L A S H R U S T I &nbsp;•&nbsp; C R A F T S</span>
+                <span>K A L A S H R U S H T I &nbsp;•&nbsp; C R A F T S</span>
               )}
             </Link>
           </div>

@@ -120,7 +120,7 @@ export default function AdminOrdersPage() {
             const cleanPhone = order.phone.replace(/[^0-9]/g, '');
 
             const waMessage = encodeURIComponent(
-              `Namaskar ${order.customerName}! Greetings from kalashrusti Pune. Regarding your festive order #${order.id} (${order.items.map((i) => i.product.name).join(', ')}), your order status is now: ${badge.label.toUpperCase()}. Thank you for supporting authentic handmade crafts!`
+              `Namaskar ${order.customerName}! Greetings from Kalashrushti Pune. Regarding your festive order #${order.id} (${order.items.map((i) => i.product.name).join(', ')}), your order status is now: ${badge.label.toUpperCase()}. Thank you for supporting authentic handmade crafts!`
             );
 
             return (

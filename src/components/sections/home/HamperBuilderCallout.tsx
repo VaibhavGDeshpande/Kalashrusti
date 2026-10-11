@@ -83,7 +83,7 @@ export const HamperBuilderCallout: React.FC = () => {
               >
                 <Image
                   src="/images/crafts/diwali_hamper.png"
-                  alt="kalashrusti Luxury Diwali Hamper"
+                  alt="Kalashrushti Luxury Diwali Hamper"
                   fill
                   className="object-cover"
                 />

@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-[#FFF8EC] mb-2">
-            {language === 'mr' ? 'कालाश्रुष्टी' : 'kalashrusti'}
+            {language === 'mr' ? 'कालाश्रुष्टी' : 'Kalashrushti'}
           </h2>
           <p className="font-devanagari text-lg sm:text-xl text-[#F5A623] mb-4">
             {language === 'mr' ? 'हस्तकला – आनंदाचा सागर' : 'Hastakala – Anandacha Sagar'}
@@ -112,7 +112,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs text-[#FFF8EC]/80">
               <li>
                 <Link href="/about" className="hover:text-[#F5A623] transition-colors">
-                  {language === 'mr' ? 'आमची कहाणी' : 'The kalashrusti Story'}
+                  {language === 'mr' ? 'आमची कहाणी' : 'The Kalashrushti Story'}
                 </Link>
               </li>
               <li>
@@ -157,7 +157,7 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={14} className="text-[#C9A24B] shrink-0" />
-                <span>kalashrusti.crafts@gmail.com</span>
+                <span>Kalashrushti.crafts@gmail.com</span>
               </div>
             </div>
           </div>
@@ -165,7 +165,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#FFF8EC]/60 gap-4">
-          <p>© 2026 kalashrusti. {t('footer.allRights')}</p>
+          <p>© 2026 Kalashrushti. {t('footer.allRights')}</p>
           <p className="flex items-center gap-1.5">
             Crafted with <Heart size={13} className="text-[#F5A623] fill-[#F5A623]" /> {t('footer.craftedWith')}
           </p>

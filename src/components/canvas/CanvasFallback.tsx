@@ -14,7 +14,7 @@ export const CanvasFallback: React.FC = () => {
         <div className="relative w-72 h-72 sm:w-88 sm:h-88">
           <Image
             src="https://images.unsplash.com/photo-1605647540924-852290f6b0d5?auto=format&fit=crop&w=800&q=80"
-            alt="kalashrusti Brass Diya"
+            alt="Kalashrushti Brass Diya"
             fill
             priority
             className="object-contain filter drop-shadow-[0_15px_30px_rgba(245,166,35,0.4)]"

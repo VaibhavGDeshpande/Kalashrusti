@@ -65,7 +65,7 @@ export function ProductDetailView({ slug }: { slug: string }) {
     .slice(0, 4);
 
   const waMessage = encodeURIComponent(
-    `Namaskar kalashrusti! I am interested in ordering "${product.name}" (₹${product.price}) from your handmade collection. Please let me know the availability and delivery details to Pune.`
+    `Namaskar Kalashrushti! I am interested in ordering "${product.name}" (₹${product.price}) from your handmade collection. Please let me know the availability and delivery details to Pune.`
   );
 
   return (

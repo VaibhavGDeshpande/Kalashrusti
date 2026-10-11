@@ -101,7 +101,7 @@ function AdminProductsContent() {
       price: priceNum,
       originalPrice: origPriceNum,
       images: [finalImage],
-      tagline: formData.tagline.trim() || 'Handcrafted festive masterpiece by kalashrusti artisans.',
+      tagline: formData.tagline.trim() || 'Handcrafted festive masterpiece by Kalashrushti artisans.',
       description: formData.description.trim() || 'Exquisitely crafted using traditional techniques in Pune, Maharashtra.',
       material: formData.material.trim() || 'Handcrafted Natural Materials',
       dimensions: formData.dimensions.trim() || 'Standard festive size',

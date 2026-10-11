@@ -101,7 +101,7 @@ export default function HamperBuilderPage() {
   };
 
   const waMessage = encodeURIComponent(
-    `Namaskar kalashrusti! I customized a Bespoke Diwali Hamper on your 3D Builder:\n\n` +
+    `Namaskar Kalashrushti! I customized a Bespoke Diwali Hamper on your 3D Builder:\n\n` +
       `🎁 Hamper Box: Luxury Wooden Keepsake Trunk (₹${BASE_BOX_PRICE})\n` +
       `✨ Selected Crafts:\n${selectedItems.map((i) => `• ${i.name} (₹${i.price})`).join('\n')}\n\n` +
       `🏷️ Total Price: ₹${totalPrice}\n` +

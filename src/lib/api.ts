@@ -1,5 +1,5 @@
 /**
- * Backend Data Access Layer for kalashrusti
+ * Backend Data Access Layer for Kalashrushti
  * 
  * NOTE FOR SUPABASE INTEGRATION:
  * When ready to connect Supabase:

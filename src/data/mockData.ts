@@ -100,7 +100,7 @@ export const MOCK_PRODUCTS: Product[] = [
     name: 'Anandacha Sagar Luxury Diwali Hamper',
     marathiName: 'आनंदाचा सागर भव्य दिवाळी भेटपेटी',
     tagline: 'Custom hand-finished box with brass diva, toran, organic dhoop & sweets',
-    description: 'The signature kalashrusti treasure box. Features our Mayura brass diya, 2 handcrafted marigold tassels, natural rosewood dhoop stand, pure cow ghee wicks, and brass pooja bell in a gold-embossed keepsake wooden box.',
+    description: 'The signature Kalashrushti treasure box. Features our Mayura brass diya, 2 handcrafted marigold tassels, natural rosewood dhoop stand, pure cow ghee wicks, and brass pooja bell in a gold-embossed keepsake wooden box.',
     category: 'hampers',
     price: 3450,
     originalPrice: 4200,

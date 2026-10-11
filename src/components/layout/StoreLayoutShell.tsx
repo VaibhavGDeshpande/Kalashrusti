@@ -6,6 +6,8 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { CartDrawer } from '@/components/layout/CartDrawer';
 
+import { PageTransitionLoader } from '@/components/ui/PageTransitionLoader';
+
 export function StoreLayoutShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isAdmin = pathname.startsWith('/admin');
@@ -16,6 +18,7 @@ export function StoreLayoutShell({ children }: { children: React.ReactNode }) {
 
   return (
     <>
+      <PageTransitionLoader />
       <React.Suspense fallback={<div className="h-16 bg-white" />}>
         <Navbar />
       </React.Suspense>

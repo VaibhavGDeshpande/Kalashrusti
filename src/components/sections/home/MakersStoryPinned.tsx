@@ -14,7 +14,7 @@ const STORY_CHAPTERS = [
     title: 'माती आणि निसर्गाशी घट्ट नातं',
     englishTitle: 'The Soul of Soil & Botanical Craft',
     description:
-      'We began kalashrusti with a simple heartfelt yearning: to bring back the pure, unhurried tactile warmth of Indian festivals. Our sola flowers are carved from wild water-plant pith that will never wilt, and our clay diyas are turned on traditional foot wheels by generational kumhars.',
+      'We began Kalashrushti with a simple heartfelt yearning: to bring back the pure, unhurried tactile warmth of Indian festivals. Our sola flowers are carved from wild water-plant pith that will never wilt, and our clay diyas are turned on traditional foot wheels by generational kumhars.',
     marathiDesc:
       'भारतीय सणांची अस्सल आणि पवित्र ऊब परत आणण्याच्या प्रेरणेतून कालाश्रुष्टीचा जन्म झाला. आमची झेंडूची फुले जंगली पाण्याच्या वनस्पतीपासून कोरलेली आहेत जी कधीही सुकत नाहीत, आणि आमचे मातीचे दिवे पारंपरिक चाकावर पिढ्यान्पिढ्या काम करणाऱ्या कुंभारांनी घडवले आहेत.',
     quote: '"हस्तकला ही केवळ वस्तू नसते, ती कारागिराच्या हृदयाची स्पंदने असते."',
@@ -46,7 +46,7 @@ const STORY_CHAPTERS = [
     title: 'घरोघरी आनंदाचा सागर पोहोचवणे',
     englishTitle: 'Hastakala: An Ocean of Joy',
     description:
-      'From our studio in Pune, every gift hamper is packed with personalized calligraphy, fragrant sandalwood dhoop, and carefully wrapped brassware. We make sure unboxing a kalashrusti parcel feels like receiving festive blessings directly from family.',
+      'From our studio in Pune, every gift hamper is packed with personalized calligraphy, fragrant sandalwood dhoop, and carefully wrapped brassware. We make sure unboxing a Kalashrushti parcel feels like receiving festive blessings directly from family.',
     marathiDesc:
       'पुण्यातील आमच्या स्टुडिओतून प्रत्येक भेटपेटी वैयक्तिक देवनागरी अक्षरांनी, सुगंधी चंदन धूप आणि पितळी दिव्यांनी सजवून पाठवली जाते. कालाश्रुष्टीचा बॉक्स उघडणे म्हणजे थेट आपुलकीचा सण साजरा करण्यासारखे आहे.',
     quote: '"प्रत्येक घरात आनंदाचे दीप तेवत राहोत, हाच आमचा ध्यास."',

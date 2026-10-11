@@ -11,7 +11,7 @@ const INSTA_POSTS = [
     id: 1,
     image: 'https://images.unsplash.com/photo-1605647540924-852290f6b0d5?auto=format&fit=crop&w=600&q=80',
     likes: 428,
-    caption: 'दिवाळीच्या पहिल्या दिवशी आपल्या दारात उजळणारा पितळी अखंड दिवा 🪔✨ #kalashrusti #diwali2026',
+    caption: 'दिवाळीच्या पहिल्या दिवशी आपल्या दारात उजळणारा पितळी अखंड दिवा 🪔✨ #Kalashrushti #diwali2026',
   },
   {
     id: 2,
@@ -76,7 +76,7 @@ export const InstagramShowcase: React.FC = () => {
             >
               <Image
                 src={post.image}
-                alt="kalashrusti Instagram Post"
+                alt="Kalashrushti Instagram Post"
                 fill
                 sizes="(max-width: 640px) 50vw, 25vw"
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"

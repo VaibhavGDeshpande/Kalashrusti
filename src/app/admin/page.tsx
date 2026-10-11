@@ -51,7 +51,7 @@ export default function AdminDashboardPage() {
             Dashboard Overview
           </h1>
           <p className="text-xs sm:text-sm text-neutral-500 mt-0.5">
-            Manage kalashrusti craft inventory, orders, and storefront settings.
+            Manage Kalashrushti craft inventory, orders, and storefront settings.
           </p>
         </div>
 

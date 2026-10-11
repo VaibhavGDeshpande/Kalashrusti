@@ -35,7 +35,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             </div>
             <div>
               <div className="font-semibold text-sm text-neutral-900 leading-tight">
-                kalashrusti
+                Kalashrushti
               </div>
               <div className="text-[11px] text-neutral-500 font-normal">
                 Admin Panel

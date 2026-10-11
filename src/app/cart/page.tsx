@@ -82,8 +82,8 @@ export default function CartPage() {
   // Generate WhatsApp order message with full customer details
   const generateWhatsAppUrl = () => {
     let text = isMarathi 
-      ? `*नवीन ऑर्डर विचारणा (kalashrusti Pune)*\n\n`
-      : `*New Order Inquiry (kalashrusti Pune)*\n\n`;
+      ? `*नवीन ऑर्डर विचारणा (Kalashrushti Pune)*\n\n`
+      : `*New Order Inquiry (Kalashrushti Pune)*\n\n`;
 
     if (customerName) text += `👤 *Customer:* ${customerName}\n`;
     if (phone) text += `📞 *Phone:* ${phone}\n`;
@@ -178,7 +178,7 @@ export default function CartPage() {
             </div>
             <div className="flex justify-between text-neutral-600">
               <span>Artisan Studio:</span>
-              <span className="font-semibold text-neutral-900">kalashrusti, Pune</span>
+              <span className="font-semibold text-neutral-900">Kalashrushti, Pune</span>
             </div>
             <div className="flex justify-between text-neutral-600">
               <span>Status:</span>
@@ -190,7 +190,7 @@ export default function CartPage() {
 
           <div className="space-y-3 pt-2">
             <a
-              href={`https://wa.me/918149065483?text=${encodeURIComponent(`Namaskar kalashrusti! I just submitted order request #${orderSuccess}. Please confirm my order details!`)}`}
+              href={`https://wa.me/918149065483?text=${encodeURIComponent(`Namaskar Kalashrushti! I just submitted order request #${orderSuccess}. Please confirm my order details!`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs transition-colors shadow-xs"
@@ -277,7 +277,7 @@ export default function CartPage() {
               {isMarathi ? 'तुमची खरेदी पिशवी' : 'Your Shopping Bag'}
             </h1>
             <p className="text-xs sm:text-sm text-neutral-500 mt-1">
-              {items.length} {isMarathi ? 'हस्तकला उत्पादने' : 'handcrafted items'} • kalashrusti Studio Pune
+              {items.length} {isMarathi ? 'हस्तकला उत्पादने' : 'handcrafted items'} • Kalashrushti Studio Pune
             </p>
           </div>
 
