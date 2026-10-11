@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ShoppingBag, Eye, Sparkles, Box, Star } from 'lucide-react';
+import { ShoppingBag, Eye, Sparkles, Star } from 'lucide-react';
 import { Product } from '@/types';
 import { useCart } from '@/context/CartContext';
 import { useLanguage } from '@/context/LanguageContext';
@@ -56,11 +56,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) 
               {language === 'mr' ? 'लोकप्रिय' : 'Bestseller'}
             </Badge>
           )}
-          {product.has3DModel && (
-            <Badge variant="subtle" icon={<Box size={11} className="text-[#C9A24B]" />}>
-              {language === 'mr' ? '३D देखावा' : '3D View'}
-            </Badge>
-          )}
         </div>
 
         {/* Quick Action Floating Bar on Hover */}
@@ -79,10 +74,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) 
       </Link>
 
       {/* Product Information */}
-      <div className="p-4 sm:p-5 flex flex-col flex-1">
+      <div className="p-3 sm:p-5 flex flex-col flex-1">
         {/* Title */}
         <Link href={`/shop/${product.slug}`} className="group-hover:text-[#6B1D2A] transition-colors">
-          <h3 className={`font-serif text-base sm:text-lg font-bold text-[#231F20] leading-snug line-clamp-1 mb-1 ${
+          <h3 className={`font-serif text-sm sm:text-lg font-bold text-[#231F20] leading-snug line-clamp-1 mb-1 ${
             language === 'mr' ? 'font-devanagari' : ''
           }`}>
             {displayName}
@@ -90,27 +85,37 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) 
         </Link>
 
         {/* Description Snippet */}
-        <p className="text-xs text-[#231F20]/65 line-clamp-2 mb-3 leading-relaxed">
+        <p className="text-[11px] sm:text-xs text-[#231F20]/65 line-clamp-2 mb-2 sm:mb-3 leading-relaxed">
           {displaySubtitle}
         </p>
 
-        {/* Bottom Price & Rating Bar */}
-        <div className="mt-auto pt-3 border-t border-[#C9A24B]/15 flex items-center justify-between">
-          <div className="flex items-baseline gap-2">
-            <span className="font-serif text-lg font-bold text-[#6B1D2A]">
+        {/* Bottom Price & Mobile Quick Action Bar */}
+        <div className="mt-auto pt-2 sm:pt-3 border-t border-[#C9A24B]/15 flex items-center justify-between gap-1.5">
+          <div className="flex items-baseline gap-1 sm:gap-2 min-w-0">
+            <span className="font-serif text-sm sm:text-lg font-bold text-[#6B1D2A] truncate">
               ₹{product.price.toLocaleString('en-IN')}
             </span>
             {product.originalPrice && (
-              <span className="text-xs text-[#231F20]/40 line-through">
+              <span className="text-[10px] sm:text-xs text-[#231F20]/40 line-through truncate hidden xs:inline">
                 ₹{product.originalPrice.toLocaleString('en-IN')}
               </span>
             )}
           </div>
 
-          <div className="flex items-center gap-1 text-xs text-[#231F20]/75">
-            <Star size={13} className="fill-[#F5A623] text-[#F5A623]" />
-            <span className="font-medium">{product.rating}</span>
-            <span className="text-[#231F20]/40">({product.reviewCount})</span>
+          <div className="flex items-center gap-1.5 shrink-0">
+            <div className="hidden sm:flex items-center gap-1 text-xs text-[#231F20]/75">
+              <Star size={12} className="fill-[#F5A623] text-[#F5A623]" />
+              <span className="font-medium">{product.rating}</span>
+            </div>
+
+            {/* Mobile Direct Add to Bag Icon Button */}
+            <button
+              onClick={handleQuickAdd}
+              aria-label="Add to bag"
+              className="sm:hidden p-1.5 rounded-full bg-[#F5A623] active:bg-[#D4880D] text-[#231F20] shadow-xs active:scale-90 transition-transform cursor-pointer"
+            >
+              <ShoppingBag size={13} className="stroke-[2.2]" />
+            </button>
           </div>
         </div>
       </div>

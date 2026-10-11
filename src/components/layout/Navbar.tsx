@@ -140,11 +140,6 @@ export const Navbar: React.FC = () => {
                         className="flex items-center justify-between px-3.5 py-2.5 text-xs text-neutral-700 hover:bg-[#FFF8EC] hover:text-[#6B1D2A] font-medium transition-colors"
                       >
                         <span>{language === 'mr' ? cat.labelMr : cat.labelEn}</span>
-                        {cat.id === 'hampers' && (
-                          <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-[#F5A623]/20 text-[#6B1D2A] font-bold">
-                            3D
-                          </span>
-                        )}
                       </Link>
                     ))}
                     <div className="border-t border-neutral-100 mt-1 pt-1">
@@ -170,21 +165,21 @@ export const Navbar: React.FC = () => {
               {language === 'mr' ? 'आमच्याबद्दल' : 'About Us'}
             </Link>
 
-            {/* 3D Hamper Builder Quick Link (Desktop) */}
+            {/* Hamper Builder Quick Link (Desktop) */}
             <Link
               href="/hamper-builder"
               className="hidden lg:inline-flex items-center gap-1.5 text-xs font-medium text-neutral-600 hover:text-[#6B1D2A] transition-colors"
             >
               <Gift size={13} className="text-[#C9A24B]" />
-              <span>{language === 'mr' ? '३D भेटपेटी' : 'Hamper Builder'}</span>
+              <span>{language === 'mr' ? 'भेटपेटी बनवा' : 'Hamper Builder'}</span>
             </Link>
           </div>
 
           {/* Top Center: Logo (K A A L A S H R U S T I • C R A F T S) */}
-          <div className="flex-1 text-center select-none px-2">
+          <div className="flex-1 text-center select-none px-1 sm:px-2 min-w-0">
             <Link 
               href="/" 
-              className="inline-block font-sans font-bold tracking-[0.26em] sm:tracking-[0.38em] uppercase text-xs sm:text-sm md:text-base text-neutral-900 hover:text-[#6B1D2A] transition-colors"
+              className="inline-block font-sans font-bold tracking-[0.14em] sm:tracking-[0.28em] md:tracking-[0.38em] uppercase text-[11px] sm:text-xs md:text-sm lg:text-base text-neutral-900 hover:text-[#6B1D2A] transition-colors truncate max-w-full"
             >
               {language === 'mr' ? (
                 <span>का ला श्रु ष्टी &nbsp;•&nbsp; ह स्त क ला</span>
@@ -385,8 +380,15 @@ export const Navbar: React.FC = () => {
 
       {/* 3. BOTTOM ROW: Centered Horizontal Category Sub-Navigation */}
       <div className="border-t border-neutral-100/90 bg-white">
-        <div className="max-w-7xl mx-auto px-4 overflow-x-auto no-scrollbar">
-          <nav className="flex items-center justify-start sm:justify-center gap-5 sm:gap-8 py-2 min-w-max">
+        <div
+          className="max-w-7xl mx-auto px-4 overflow-x-auto sm:overflow-x-visible no-scrollbar"
+          style={{
+            WebkitOverflowScrolling: 'touch',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+          }}
+        >
+          <nav className="flex items-center justify-start sm:justify-center gap-4 sm:gap-8 py-2 min-w-max">
             {NAV_CATEGORIES.map((cat) => {
               const href = cat.id === 'new' ? '/shop?featured=true' : `/shop?category=${cat.id}`;
               const isActive = pathname.includes(cat.id);
@@ -394,7 +396,7 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={cat.id}
                   href={href}
-                  className={`text-[11px] sm:text-xs font-medium tracking-wide transition-colors whitespace-nowrap ${
+                  className={`text-[11px] sm:text-xs font-medium tracking-wide transition-colors whitespace-nowrap py-1 px-1.5 rounded-lg active:bg-neutral-100 ${
                     isActive
                       ? 'text-[#6B1D2A] font-bold border-b-2 border-[#6B1D2A] pb-0.5'
                       : 'text-neutral-600 hover:text-black'
@@ -447,7 +449,7 @@ export const Navbar: React.FC = () => {
                 onClick={() => setMobileMenuOpen(false)}
                 className="block py-1 text-[#6B1D2A] font-bold"
               >
-                🎁 {language === 'mr' ? '३D दिवाळी भेटपेटी बनवा' : '3D Hamper Builder'}
+                🎁 {language === 'mr' ? 'दिवाळी भेटपेटी बनवा' : 'Hamper Builder'}
               </Link>
               <Link
                 href="/admin"

@@ -11,24 +11,24 @@ export const Footer: React.FC = () => {
   const { language, t } = useLanguage();
 
   return (
-    <footer className="bg-[#6B1D2A] text-[#FFF8EC] border-t-2 border-[#C9A24B]/40 pt-16 pb-12 relative overflow-hidden">
+    <footer className="bg-[#6B1D2A] text-[#FFF8EC] border-t-2 border-[#C9A24B]/40 pt-10 sm:pt-16 pb-8 sm:pb-12 relative overflow-hidden">
       {/* Decorative Warm Ambient Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-36 bg-[#F5A623]/10 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Top Brand Statement */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF8EC]/10 border border-[#C9A24B]/30 mb-4">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF8EC]/10 border border-[#C9A24B]/30 mb-3 sm:mb-4">
             <Sparkles size={14} className="text-[#F5A623]" />
             <span className="text-xs uppercase tracking-widest text-[#DFC47F]">
               {t('footer.heritagePill')}
             </span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-[#FFF8EC] mb-2">
+          <h2 className="font-serif text-2xl sm:text-4xl font-bold tracking-tight text-[#FFF8EC] mb-2">
             {language === 'mr' ? 'कालाश्रुष्टी' : 'Kalashrushti'}
           </h2>
-          <p className="font-devanagari text-lg sm:text-xl text-[#F5A623] mb-4">
+          <p className="font-devanagari text-base sm:text-xl text-[#F5A623] mb-3 sm:mb-4">
             {language === 'mr' ? 'हस्तकला – आनंदाचा सागर' : 'Hastakala – Anandacha Sagar'}
           </p>
           <p className="text-xs sm:text-sm text-[#FFF8EC]/75 leading-relaxed">
@@ -39,8 +39,8 @@ export const Footer: React.FC = () => {
         {/* Self-drawing Rangoli Divider */}
         <RangoliDivider theme="cream" className="opacity-70 my-4" />
 
-        {/* 4 Column Navigation Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 py-10 border-b border-[#C9A24B]/20">
+        {/* 4 Column Navigation Grid (2-cols on mobile for compact scanning) */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10 py-8 sm:py-10 border-b border-[#C9A24B]/20">
           {/* Col 1: Craft Categories */}
           <div>
             <h3 className="font-serif text-sm font-bold tracking-wider uppercase text-[#DFC47F] mb-4">
@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs text-[#FFF8EC]/80">
               <li>
                 <Link href="/hamper-builder" className="hover:text-[#F5A623] transition-colors font-medium text-[#F5A623]">
-                  {language === 'mr' ? 'सानुकूल ३D भेटपेटी' : 'Custom 3D Hamper Builder'}
+                  {language === 'mr' ? 'सानुकूल भेटपेटी' : 'Custom Hamper Builder'}
                 </Link>
               </li>
               <li>

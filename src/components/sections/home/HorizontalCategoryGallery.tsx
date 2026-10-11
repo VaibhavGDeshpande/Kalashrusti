@@ -60,7 +60,7 @@ const CATEGORIES_GRID: CategoryItem[] = [
       { labelEn: 'Kundan Rangoli', labelMr: 'कुंदन रांगोळी', query: 'rangoli' },
       { labelEn: 'Diwali Hampers', labelMr: 'दिवाळी हॅम्पर्स', query: 'hampers' },
       { labelEn: 'Jewel Patches', labelMr: 'रत्न पॅचेस', query: 'patches' },
-      { labelEn: '3D Builder', labelMr: '३D भेटपेटी', query: 'builder' },
+      { labelEn: 'Hamper Builder', labelMr: 'भेटपेटी बनवा', query: 'builder' },
     ],
   },
 ];
@@ -70,12 +70,12 @@ export const HorizontalCategoryGallery: React.FC = () => {
   const isMarathi = language === 'mr';
 
   return (
-    <section className="py-16 sm:py-20 bg-white border-b border-neutral-200/80">
+    <section className="py-10 sm:py-20 bg-white border-b border-neutral-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Centered Heading Matching Reference Screenshot Exactly */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 space-y-2.5">
-          <h2 className="font-sans text-2xl sm:text-3xl lg:text-[38px] font-normal text-neutral-900 tracking-tight leading-snug">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14 space-y-2">
+          <h2 className="font-sans text-xl sm:text-3xl lg:text-[38px] font-normal text-neutral-900 tracking-tight leading-snug">
             {isMarathi 
               ? 'पुण्यातील कारागिरांचे अस्सल हस्तकला दालन' 
               : "Shop the World's Finest Authentic Handmade Crafts"}
@@ -88,7 +88,7 @@ export const HorizontalCategoryGallery: React.FC = () => {
         </div>
 
         {/* 2x2 Grid with Clean Rounded Cards, Centered Title & Underlined Sublinks */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 sm:gap-y-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 sm:gap-y-14">
           {CATEGORIES_GRID.map((cat, idx) => {
             const displayTitle = isMarathi ? cat.title : cat.englishTitle;
 

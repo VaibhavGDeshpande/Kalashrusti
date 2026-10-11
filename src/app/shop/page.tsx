@@ -107,8 +107,11 @@ function ShopContent() {
 
         {/* Filter Toolbar */}
         <div className="bg-[#FFF8EC] rounded-2xl p-4 sm:p-5 border border-[#C9A24B]/30 shadow-xs space-y-4">
-          {/* Category Chips Bar */}
-          <div className="flex flex-wrap items-center gap-2">
+          {/* Category Chips Bar (Swipeable on Mobile) */}
+          <div 
+            className="flex overflow-x-auto no-scrollbar items-center gap-2 pb-1"
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
             {CATEGORIES.map((cat) => {
               const isActive = selectedCategory === cat.id;
               const count =
@@ -120,7 +123,7 @@ function ShopContent() {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-3.5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+                  className={`px-3.5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all whitespace-nowrap shrink-0 cursor-pointer flex items-center gap-1.5 ${
                     isActive
                       ? 'bg-[#6B1D2A] text-[#FFF8EC] shadow-md border border-[#8E2737]'
                       : 'bg-white text-[#231F20]/75 border border-[#C9A24B]/30 hover:border-[#6B1D2A] hover:text-[#6B1D2A]'
@@ -221,9 +224,9 @@ function ShopContent() {
           )}
         </div>
 
-        {/* Products Grid */}
+        {/* Products Grid (2-Columns on Mobile for E-Commerce Comfort) */}
         {sortedProducts.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
             {sortedProducts.map((product, idx) => (
               <ProductCard key={product.id} product={product} index={idx} />
             ))}

@@ -27,7 +27,6 @@ import { useCart } from '@/context/CartContext';
 import { useLanguage } from '@/context/LanguageContext';
 import { WhatsAppIcon } from '@/components/ui/Icons';
 import { RangoliDivider } from '@/components/ui/RangoliDivider';
-import HamperCanvas from '@/components/canvas/HamperCanvas';
 
 const BASE_BOX_PRICE = 499; // Price for handcrafted lacquered keepsake trunk
 const MAX_WEIGHT_GRAMS = 2000;
@@ -77,8 +76,7 @@ export default function HamperBuilderPage() {
       dimensions: '12 x 10 x 5 in Keepsake Wooden Box',
       material: 'Lacquered Pine Wood with Crimson Silk Lining & Handcrafted Brass Accents',
       festivalSpecial: true,
-      has3DModel: true,
-      modelType: 'hamper',
+      has3DModel: false,
       rating: 5.0,
       reviewCount: 1,
     };
@@ -101,7 +99,7 @@ export default function HamperBuilderPage() {
   };
 
   const waMessage = encodeURIComponent(
-    `Namaskar Kalashrushti! I customized a Bespoke Diwali Hamper on your 3D Builder:\n\n` +
+    `Namaskar Kalashrushti! I customized a Bespoke Diwali Hamper on your Hamper Builder:\n\n` +
       `🎁 Hamper Box: Luxury Wooden Keepsake Trunk (₹${BASE_BOX_PRICE})\n` +
       `✨ Selected Crafts:\n${selectedItems.map((i) => `• ${i.name} (₹${i.price})`).join('\n')}\n\n` +
       `🏷️ Total Price: ₹${totalPrice}\n` +
@@ -111,7 +109,7 @@ export default function HamperBuilderPage() {
   );
 
   return (
-    <div className="min-h-screen bg-[#FFFDF9] py-10 px-4 sm:px-6 lg:px-8 font-sans">
+    <div className="min-h-screen bg-[#FFFDF9] py-6 sm:py-10 pb-24 lg:pb-10 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Header Breadcrumbs & Title */}
         <div>
@@ -124,7 +122,7 @@ export default function HamperBuilderPage() {
               Catalog
             </Link>
             <ChevronRight size={13} />
-            <span className="text-[#6B1D2A] font-semibold">3D Hamper Builder</span>
+            <span className="text-[#6B1D2A] font-semibold">Hamper Builder</span>
           </nav>
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -133,8 +131,8 @@ export default function HamperBuilderPage() {
                 <Sparkles size={14} className="text-[#D4880D]" />
                 <span>
                   {language === 'mr'
-                    ? 'सानुकूल ३D भेटपेटी कार्यशाळा'
-                    : 'Interactive 3D Bespoke Gifting Studio'}
+                    ? 'सानुकूल भेटपेटी कार्यशाळा'
+                    : 'Bespoke Gifting Studio'}
                 </span>
               </div>
               <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#6B1D2A] tracking-tight">
@@ -174,38 +172,119 @@ export default function HamperBuilderPage() {
         {/* ======================================================== */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* ======================================================== */}
-          {/* LEFT COLUMN: INTERACTIVE 3D HAMPER CANVAS & METERS (7 Cols) */}
+          {/* LEFT COLUMN: 2D HAMPER PRESENTATION & SUMMARY (7 Cols) */}
           {/* ======================================================== */}
-          <div className="lg:col-span-7 space-y-4 lg:sticky lg:top-24">
-            {/* 3D Canvas Card */}
-            <div className="relative rounded-3xl overflow-hidden bg-radial from-[#FFFDF9] via-[#F7EAD0]/60 to-[#E8DFC8]/40 border-2 border-[#C9A24B]/40 shadow-xl">
-              {/* Top Bar inside 3D Canvas */}
-              <div className="absolute top-4 left-4 right-4 z-10 flex items-center justify-between pointer-events-none">
-                <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-[#6B1D2A] text-[#F5A623] shadow-md border border-[#C9A24B]/40 pointer-events-auto">
-                  🎁 3D Live Trunk Simulator
-                </span>
+          <div className="lg:col-span-7 space-y-5 lg:sticky lg:top-24">
+            {/* 2D Trunk Showcase Card */}
+            <div className="relative rounded-3xl overflow-hidden bg-white border-2 border-[#C9A24B]/40 shadow-lg">
+              {/* Top Bar */}
+              <div className="p-4 sm:p-5 pb-3 flex items-center justify-between border-b border-[#E8DFC8]/60 bg-[#FFFDF9]">
+                <div className="flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#6B1D2A] text-[#F5A623] shadow-xs">
+                    🎁 Festive Trunk Showcase
+                  </span>
+                  <span className="hidden sm:inline-block text-xs font-semibold text-[#6B1D2A]">
+                    Signature Lacquered Box
+                  </span>
+                </div>
 
-                <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-white/90 backdrop-blur-md text-[#231F20] shadow-xs border border-[#C9A24B]/30 pointer-events-auto">
-                  {selectedItems.length} items packed inside
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#FFF8EC] text-[#231F20] border border-[#C9A24B]/30">
+                  {selectedItems.length} treasures selected
                 </span>
               </div>
 
-              {/* R3F 3D Canvas */}
-              <HamperCanvas selectedItems={selectedIds} />
+              {/* High-Resolution Trunk Hero Image */}
+              <div className="relative aspect-16/10 w-full bg-[#FFF8EC] overflow-hidden">
+                <Image
+                  src="/images/crafts/diwali_hamper.png"
+                  alt="Kalashrushti Luxury Diwali Hamper"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
-              {/* Bottom Ribbon Indicator */}
-              <div className="p-3 bg-[#FFF8EC]/95 border-t border-[#C9A24B]/30 flex flex-wrap items-center justify-between gap-2 text-xs text-[#231F20]/80">
-                <div className="flex items-center gap-2">
-                  <Package size={14} className="text-[#6B1D2A]" />
-                  <span>
-                    Base: <strong>Signature Lacquered Wooden Trunk</strong> (₹{BASE_BOX_PRICE})
-                  </span>
+                <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white text-xs">
+                  <div className="font-medium drop-shadow-md">
+                    Hand-crafted pine wood trunk with crimson velvet cushioning
+                  </div>
+                  <div className="bg-[#6B1D2A]/90 backdrop-blur-xs px-2.5 py-1 rounded-full text-[11px] font-bold text-[#F5A623]">
+                    Base ₹{BASE_BOX_PRICE}
+                  </div>
                 </div>
-                <div className="flex items-center gap-1.5 text-[#A5802E] font-medium">
-                  <Scale size={13} />
-                  <span>
-                    Est. Weight: <strong>{totalWeight}g</strong> / {MAX_WEIGHT_GRAMS}g
-                  </span>
+              </div>
+
+              {/* Items packed summary tray */}
+              <div className="p-4 sm:p-5 bg-[#FFFDF9] space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Package size={15} className="text-[#6B1D2A]" />
+                    <span className="text-xs font-bold text-[#6B1D2A] uppercase tracking-wider">
+                      Included In This Hamper ({selectedItems.length})
+                    </span>
+                  </div>
+                  {selectedItems.length > 0 && (
+                    <button
+                      onClick={() => setSelectedIds([])}
+                      className="text-[11px] text-red-600 hover:underline font-medium cursor-pointer"
+                    >
+                      Clear All
+                    </button>
+                  )}
+                </div>
+
+                {selectedItems.length === 0 ? (
+                  <div className="p-6 text-center rounded-2xl bg-[#FFF8EC] border border-dashed border-[#C9A24B]/40 text-neutral-500 text-xs">
+                    Your hamper box is currently empty. Pick gifts from the list on the right to pack your trunk!
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    {selectedItems.map((item) => (
+                      <div
+                        key={item.id}
+                        className="flex items-center justify-between gap-2.5 p-2.5 rounded-xl bg-[#FFF8EC] border border-[#C9A24B]/30 shadow-xs"
+                      >
+                        <div className="relative w-11 h-11 rounded-lg overflow-hidden shrink-0 border border-[#C9A24B]/40 bg-white">
+                          <Image
+                            src={item.image}
+                            alt={item.name}
+                            fill
+                            sizes="44px"
+                            className="object-cover"
+                          />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs font-semibold text-[#231F20] truncate">
+                            {item.name}
+                          </p>
+                          <p className="text-[11px] font-serif font-bold text-[#6B1D2A]">
+                            ₹{item.price}
+                          </p>
+                        </div>
+                        <button
+                          onClick={() => toggleItem(item.id)}
+                          className="p-1 rounded-lg hover:bg-neutral-200/80 text-neutral-400 hover:text-red-600 transition-colors cursor-pointer"
+                          title="Remove item"
+                        >
+                          <Trash2 size={13} />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Weight & Ribbon Status */}
+                <div className="pt-3 border-t border-[#E8DFC8]/60 flex flex-wrap items-center justify-between gap-2 text-xs text-[#231F20]/80">
+                  <div className="flex items-center gap-1.5 text-[#A5802E] font-medium">
+                    <Scale size={13} />
+                    <span>
+                      Est. Trunk Weight: <strong>{totalWeight}g</strong> / {MAX_WEIGHT_GRAMS}g
+                    </span>
+                  </div>
+                  <div className="text-[11px] font-medium text-neutral-600">
+                    Ribbon: <strong className="capitalize">{ribbonStyle}</strong>
+                  </div>
                 </div>
               </div>
             </div>
@@ -466,6 +545,27 @@ export default function HamperBuilderPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Sticky Mobile Builder Action Bar */}
+      <div className="lg:hidden fixed bottom-0 inset-x-0 z-30 bg-white/95 backdrop-blur-md px-4 py-3 border-t border-neutral-200/90 shadow-[0_-4px_16px_rgba(0,0,0,0.08)] flex items-center justify-between gap-3">
+        <div className="min-w-0">
+          <div className="text-[10px] text-neutral-500 uppercase font-bold tracking-wider">
+            {selectedItems.length} Treasures
+          </div>
+          <div className="font-serif text-base font-bold text-[#6B1D2A] leading-tight">
+            ₹{totalPrice}
+          </div>
+        </div>
+
+        <button
+          onClick={handleAddToCart}
+          disabled={selectedItems.length === 0}
+          className="flex-1 max-w-[240px] py-2.5 px-4 rounded-full bg-[#6B1D2A] active:bg-[#4A121C] disabled:bg-neutral-300 text-[#FFF8EC] text-xs font-bold shadow-md flex items-center justify-center gap-1.5 active:scale-95 transition-transform cursor-pointer disabled:cursor-not-allowed"
+        >
+          <ShoppingBag size={14} className="text-[#F5A623]" />
+          <span>{isAddedSuccess ? 'Added!' : 'Add Hamper to Bag'}</span>
+        </button>
       </div>
     </div>
   );

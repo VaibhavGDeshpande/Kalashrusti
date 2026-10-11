@@ -41,14 +41,14 @@ const DICTIONARY: Record<string, Record<Language, string>> = {
     mr: 'नैसर्गिक वनस्पतीची झेंडूची फुले, अखंड पितळी दिवे, कुंदन रांगोळी आणि रेशमी टेबल रनर. आपल्या घराला मांगल्याचे तेज आणि आनंदाची ऊब देण्यासाठी पुण्यात घडवलेली हस्तकला.'
   },
   'hero.exploreBtn': { en: 'Explore Creations', mr: 'संग्रह पाहा' },
-  'hero.hamperBtn': { en: '3D Hamper Builder', mr: '३D भेटपेटी बनवा' },
+  'hero.hamperBtn': { en: 'Hamper Builder', mr: 'भेटपेटी बनवा' },
   'hero.trust1Title': { en: '100% Handcrafted', mr: '१००% हस्तकला' },
   'hero.trust1Desc': { en: 'Artisan Made', mr: 'अस्सल निर्मिती' },
   'hero.trust2Title': { en: 'Virgin Brass', mr: 'शुद्ध पितळ' },
   'hero.trust2Desc': { en: 'Lifetime Durability', mr: 'दीर्घकाळ टिकणारे' },
   'hero.trust3Title': { en: 'Calligraphy Card', mr: 'हस्तलिखित पत्र' },
   'hero.trust3Desc': { en: 'Personalised Note', mr: 'वैयक्तिक शुभेच्छा' },
-  'hero.interactive3d': { en: '3D Diva: Drag to rotate & inspect', mr: '३D दिवा: फिरवण्यासाठी ड्रॅग करा' },
+  'hero.interactive3d': { en: 'Handcrafted Festive Crafts', mr: 'हस्तनिर्मित विशेष निर्मिती' },
 
   // Categories
   'cat.tag': { en: 'Explore By Category', mr: 'हस्तकलेचे प्रकार' },
@@ -77,18 +77,18 @@ const DICTIONARY: Record<string, Record<Language, string>> = {
   'story.studioStamp': { en: 'Pune, Maharashtra • Studio', mr: 'पुणे, महाराष्ट्र • स्टुडिओ' },
 
   // Hamper Callout
-  'hamper.badge': { en: 'Interactive Hamper Builder', mr: '३D सानुकूल भेटपेटी' },
+  'hamper.badge': { en: 'Custom Hamper Studio', mr: 'सानुकूल भेटपेटी' },
   'hamper.title1': { en: 'Curate Your Own', mr: 'तुमच्या आवडीची' },
   'hamper.title2': { en: 'Luxury Diwali Gift Trunk', mr: 'खास दिवाळी भेटपेटी' },
   'hamper.desc': {
-    en: 'Choose your royal gift trunk, handpick handcrafted brass divas, sola flower malas, temple dhoop, and sweets. Watch your 3D hamper pack and open live!',
-    mr: 'राजेशाही लाकडी पेटी निवडा, त्यामध्ये पितळी दिवा, तोरण, धूप आणि मिठाई स्वतः निवडून भरा. तुमची ३D भेटपेटी स्क्रीनवर सजताना पाहा!'
+    en: 'Choose your royal gift trunk, handpick handcrafted brass divas, sola flower malas, temple dhoop, and sweets. Customize your bespoke festive hamper with ease!',
+    mr: 'राजेशाही लाकडी पेटी निवडा, त्यामध्ये पितळी दिवा, तोरण, धूप आणि मिठाई स्वतः निवडून भरा. तुमची भेटपेटी आपल्या आवडीनुसार सजवा!'
   },
-  'hamper.f1': { en: 'Real-time 3D Unboxing & Packing', mr: 'थेट ३D अनबॉक्सिंग आणि पॅकिंग' },
+  'hamper.f1': { en: 'Live Artisanal Gift Packing', mr: 'थेट सानुकूल पॅकिंग' },
   'hamper.f2': { en: 'Handwritten Calligraphy Card', mr: 'हस्तलिखित देवनागरी शुभेच्छापत्र' },
   'hamper.f3': { en: 'Hereditary Artisan Crafted', mr: 'पारंपरिक कारागिरांनी घडवलेले' },
   'hamper.f4': { en: 'Instant WhatsApp Order Dispatch', mr: 'WhatsApp वर थेट ऑर्डर सुविधा' },
-  'hamper.cta': { en: 'Launch 3D Hamper Builder', mr: 'भेटपेटी बनवणे सुरू करा' },
+  'hamper.cta': { en: 'Create Your Hamper', mr: 'भेटपेटी बनवणे सुरू करा' },
 
   // Instagram
   'insta.tag': { en: 'Instagram Feed', mr: 'इन्स्टाग्राम वरील झलक' },

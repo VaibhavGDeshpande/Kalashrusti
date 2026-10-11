@@ -106,6 +106,7 @@ html.lenis, html.lenis body {
 /* Custom festive scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 0px;
 }
 
 ::-webkit-scrollbar-track {
@@ -119,6 +120,18 @@ html.lenis, html.lenis body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #6B1D2A;
+}
+
+/* Hide scrollbar utility for touch scrollable carousels & tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
 }
 
 @keyframes flameFlicker {

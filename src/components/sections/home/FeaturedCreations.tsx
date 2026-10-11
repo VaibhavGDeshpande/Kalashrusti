@@ -32,33 +32,36 @@ export const FeaturedCreations: React.FC = () => {
       : products.filter((p) => p.category === activeTab);
 
   return (
-    <section className="py-24 bg-[#FFF8EC] relative">
+    <section className="py-14 sm:py-24 bg-[#FFF8EC] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#F5A623]/15 border border-[#F5A623]/30 text-xs font-semibold text-[#6B1D2A] mb-3">
             <Sparkles size={14} className="text-[#D4880D]" />
             <span>{t('feat.badge')}</span>
           </div>
 
-          <h2 className={`font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#6B1D2A] tracking-tight mb-3 ${
+          <h2 className={`font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-[#6B1D2A] tracking-tight mb-2 sm:mb-3 ${
             language === 'mr' ? 'font-devanagari' : ''
           }`}>
             {t('feat.title')}
           </h2>
-          <p className="text-sm sm:text-base text-[#231F20]/75">
+          <p className="text-xs sm:text-base text-[#231F20]/75">
             {t('feat.subtitle')}
           </p>
 
-          {/* Category Filter Chips */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
+          {/* Category Filter Chips (Swipeable on Mobile) */}
+          <div 
+            className="flex overflow-x-auto no-scrollbar items-center justify-start sm:justify-center gap-2 mt-6 sm:mt-8 pb-1 sm:pb-0 px-1"
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
             {tabs.map((tab) => {
               const isActive = activeTab === tab.id;
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as typeof activeTab)}
-                  className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all cursor-pointer ${
+                  className={`px-3.5 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap shrink-0 cursor-pointer ${
                     isActive
                       ? 'bg-[#6B1D2A] text-[#FFF8EC] shadow-md border border-[#8E2737]'
                       : 'bg-[#FFFDF9] text-[#231F20]/75 border border-[#C9A24B]/30 hover:border-[#6B1D2A] hover:text-[#6B1D2A]'
@@ -71,7 +74,7 @@ export const FeaturedCreations: React.FC = () => {
           </div>
         </div>
 
-        {/* Product Cards Grid with Staggered Entrance */}
+        {/* Product Cards Grid with 2-Columns on Mobile */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -79,7 +82,7 @@ export const FeaturedCreations: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6"
           >
             {filteredProducts.map((product, index) => (
               <ProductCard key={product.id} product={product} index={index} />

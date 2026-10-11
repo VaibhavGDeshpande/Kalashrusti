@@ -53,16 +53,16 @@ export const CartDrawer: React.FC = () => {
           />
 
           {/* Drawer Panel */}
-          <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
+          <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 300 }}
-              className="w-screen max-w-md bg-[#FFFDF9] shadow-2xl flex flex-col border-l border-[#C9A24B]/30"
+              className="w-screen max-w-full sm:max-w-md bg-[#FFFDF9] shadow-2xl flex flex-col border-l border-[#C9A24B]/30"
             >
               {/* Drawer Header */}
-              <div className="p-5 border-b border-[#C9A24B]/20 bg-[#FFF8EC] flex items-center justify-between">
+              <div className="p-4 sm:p-5 border-b border-[#C9A24B]/20 bg-[#FFF8EC] flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="p-2 rounded-full bg-[#6B1D2A] text-[#FFF8EC]">
                     <ShoppingBag size={18} />

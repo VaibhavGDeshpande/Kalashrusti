@@ -245,7 +245,7 @@ export default function CartPage() {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full border border-neutral-300 hover:bg-neutral-50 text-neutral-800 text-xs font-medium transition-colors"
             >
               <Gift size={14} className="text-[#C9A24B]" />
-              <span>{isMarathi ? '३D भेटपेटी बनवा' : '3D Hamper Builder'}</span>
+              <span>{isMarathi ? 'भेटपेटी बनवा' : 'Hamper Builder'}</span>
             </Link>
           </div>
         </div>
@@ -325,11 +325,11 @@ export default function CartPage() {
           <div className="lg:col-span-7 space-y-4">
             <div className="bg-white border border-neutral-200 rounded-2xl overflow-hidden shadow-2xs divide-y divide-neutral-100">
               {items.map((item) => (
-                <div key={item.product.id} className="p-4 sm:p-5 flex gap-4 sm:gap-5 items-center">
+                <div key={item.product.id} className="p-3 sm:p-5 flex gap-3 sm:gap-5 items-center">
                   {/* Thumbnail */}
                   <Link 
                     href={`/shop/${item.product.slug}`}
-                    className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden bg-neutral-100 border border-neutral-200 shrink-0"
+                    className="relative w-16 h-16 sm:w-24 sm:h-24 rounded-xl overflow-hidden bg-neutral-100 border border-neutral-200 shrink-0"
                   >
                     <Image
                       src={item.product.images[0]}
@@ -419,21 +419,21 @@ export default function CartPage() {
             </div>
 
             {/* Heritage Trust Badges */}
-            <div className="grid grid-cols-3 gap-3 pt-4">
-              <div className="p-3.5 rounded-2xl bg-white border border-neutral-200 text-center space-y-1">
-                <ShieldCheck size={18} className="mx-auto text-[#6B1D2A]" />
-                <div className="text-[11px] font-bold text-neutral-900">100% Authentic</div>
-                <div className="text-[10px] text-neutral-500">Handcrafted in Pune</div>
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-4">
+              <div className="p-2 sm:p-3.5 rounded-2xl bg-white border border-neutral-200 text-center space-y-0.5 sm:space-y-1">
+                <ShieldCheck size={16} className="mx-auto text-[#6B1D2A]" />
+                <div className="text-[10px] sm:text-[11px] font-bold text-neutral-900 leading-tight">100% Authentic</div>
+                <div className="text-[9px] sm:text-[10px] text-neutral-500 leading-tight">Pune Crafted</div>
               </div>
-              <div className="p-3.5 rounded-2xl bg-white border border-neutral-200 text-center space-y-1">
-                <Truck size={18} className="mx-auto text-[#6B1D2A]" />
-                <div className="text-[11px] font-bold text-neutral-900">Safe Packaging</div>
-                <div className="text-[10px] text-neutral-500">Zero-damage boxes</div>
+              <div className="p-2 sm:p-3.5 rounded-2xl bg-white border border-neutral-200 text-center space-y-0.5 sm:space-y-1">
+                <Truck size={16} className="mx-auto text-[#6B1D2A]" />
+                <div className="text-[10px] sm:text-[11px] font-bold text-neutral-900 leading-tight">Safe Packaging</div>
+                <div className="text-[9px] sm:text-[10px] text-neutral-500 leading-tight">Zero-damage</div>
               </div>
-              <div className="p-3.5 rounded-2xl bg-white border border-neutral-200 text-center space-y-1">
-                <RotateCcw size={18} className="mx-auto text-[#6B1D2A]" />
-                <div className="text-[11px] font-bold text-neutral-900">Artisan Support</div>
-                <div className="text-[10px] text-neutral-500">Direct to families</div>
+              <div className="p-2 sm:p-3.5 rounded-2xl bg-white border border-neutral-200 text-center space-y-0.5 sm:space-y-1">
+                <RotateCcw size={16} className="mx-auto text-[#6B1D2A]" />
+                <div className="text-[10px] sm:text-[11px] font-bold text-neutral-900 leading-tight">Direct Support</div>
+                <div className="text-[9px] sm:text-[10px] text-neutral-500 leading-tight">Artisan Families</div>
               </div>
             </div>
           </div>

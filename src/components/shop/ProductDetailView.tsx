@@ -9,7 +9,6 @@ import {
   Truck, 
   RotateCcw, 
   Star, 
-  Box, 
   ChevronRight
 } from 'lucide-react';
 import { useProducts } from '@/context/ProductsContext';
@@ -18,7 +17,6 @@ import { useLanguage } from '@/context/LanguageContext';
 import { WhatsAppIcon } from '@/components/ui/Icons';
 import { ProductCard } from '@/components/ui/ProductCard';
 import { RangoliDivider } from '@/components/ui/RangoliDivider';
-import HeroCanvas from '@/components/canvas/HeroCanvas';
 
 export function ProductDetailView({ slug }: { slug: string }) {
   const { products } = useProducts();
@@ -28,7 +26,6 @@ export function ProductDetailView({ slug }: { slug: string }) {
   const product = products.find((p) => p.slug === slug);
 
   const [selectedImage, setSelectedImage] = useState<number>(0);
-  const [view3D, setView3D] = useState<boolean>(false);
   const [quantity, setQuantity] = useState<number>(1);
   const [addedAnimation, setAddedAnimation] = useState<boolean>(false);
 
@@ -69,7 +66,7 @@ export function ProductDetailView({ slug }: { slug: string }) {
   );
 
   return (
-    <div className="min-h-screen bg-[#FFFDF9] py-10 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#FFFDF9] py-6 sm:py-10 pb-24 sm:pb-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-10">
         {/* Breadcrumb Navigation */}
         <nav className="flex items-center gap-2 text-xs text-[#231F20]/60">
@@ -95,41 +92,17 @@ export function ProductDetailView({ slug }: { slug: string }) {
 
         {/* Product Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-          {/* Left Column: Image Gallery & 3D Viewer */}
+          {/* Left Column: Image Gallery */}
           <div className="space-y-4">
             <div className="relative aspect-square w-full rounded-3xl overflow-hidden bg-[#FFF8EC] border-2 border-[#C9A24B]/30 shadow-lg">
-              {view3D && product.has3DModel ? (
-                <div className="w-full h-full relative bg-radial from-[#FFFDF9] to-[#F7EAD0]">
-                  <HeroCanvas />
-                  <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-black/60 backdrop-blur-xs text-white text-xs text-center">
-                    Drag with mouse/touch to inspect the 3D handcrafted details in full 360°.
-                  </div>
-                </div>
-              ) : (
-                <Image
-                  src={product.images[selectedImage] || product.images[0]}
-                  alt={product.name}
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              )}
-
-              {/* 3D Model Toggle button if available */}
-              {product.has3DModel && (
-                <button
-                  onClick={() => setView3D(!view3D)}
-                  className={`absolute top-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-bold shadow-md backdrop-blur-xs transition-all flex items-center gap-1.5 cursor-pointer ${
-                    view3D
-                      ? 'bg-[#6B1D2A] text-[#FFF8EC]'
-                      : 'bg-[#FFFDF9]/90 text-[#6B1D2A] hover:bg-[#6B1D2A] hover:text-[#FFF8EC]'
-                  }`}
-                >
-                  <Box size={14} />
-                  <span>{view3D ? 'View Photos' : 'Interactive 3D View'}</span>
-                </button>
-              )}
+              <Image
+                src={product.images[selectedImage] || product.images[0]}
+                alt={product.name}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
 
               {/* Badges */}
               <div className="absolute top-4 left-4 flex flex-col gap-1.5">
@@ -147,8 +120,8 @@ export function ProductDetailView({ slug }: { slug: string }) {
             </div>
 
             {/* Thumbnail selector */}
-            {product.images.length > 1 && !view3D && (
-              <div className="flex gap-3 overflow-x-auto pb-2">
+            {product.images.length > 1 && (
+              <div className="flex gap-3 overflow-x-auto no-scrollbar pb-2">
                 {product.images.map((img, idx) => (
                   <button
                     key={idx}
@@ -331,11 +304,11 @@ export function ProductDetailView({ slug }: { slug: string }) {
           </div>
         </div>
 
-        {/* Related Creations from this category */}
+        {/* Related Creations from this category (2-col on mobile) */}
         {relatedProducts.length > 0 && (
-          <div className="pt-16 space-y-6">
+          <div className="pt-12 sm:pt-16 space-y-6">
             <div className="text-center">
-              <h2 className="font-serif text-2xl font-bold text-[#6B1D2A]">
+              <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#6B1D2A]">
                 More Creations in {product.category.toUpperCase()}
               </h2>
               <p className="text-xs text-[#231F20]/60 mt-1">
@@ -343,13 +316,31 @@ export function ProductDetailView({ slug }: { slug: string }) {
               </p>
             </div>
             <RangoliDivider theme="gold" className="my-2" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
               {relatedProducts.map((rel, idx) => (
                 <ProductCard key={rel.id} product={rel} index={idx} />
               ))}
             </div>
           </div>
         )}
+      </div>
+
+      {/* Sticky Mobile Add to Bag Floating Bar */}
+      <div className="sm:hidden fixed bottom-0 inset-x-0 z-30 bg-white/95 backdrop-blur-md px-4 py-3 border-t border-neutral-200/90 shadow-[0_-4px_16px_rgba(0,0,0,0.08)] flex items-center justify-between gap-3">
+        <div className="min-w-0">
+          <div className="text-[10px] text-neutral-500 uppercase tracking-wider font-bold">Price</div>
+          <div className="font-serif text-base font-bold text-[#6B1D2A] leading-tight">
+            ₹{(product.price * quantity).toLocaleString('en-IN')}
+          </div>
+        </div>
+
+        <button
+          onClick={handleAddToCart}
+          className="flex-1 max-w-[220px] py-2.5 px-4 rounded-full bg-[#6B1D2A] active:bg-[#4A121C] text-[#FFF8EC] text-xs font-bold shadow-md flex items-center justify-center gap-1.5 active:scale-95 transition-transform cursor-pointer"
+        >
+          <ShoppingBag size={14} className="text-[#F5A623]" />
+          <span>{addedAnimation ? 'Added!' : 'Add to Bag'}</span>
+        </button>
       </div>
     </div>
   );

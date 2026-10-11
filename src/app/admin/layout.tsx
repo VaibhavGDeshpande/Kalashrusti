@@ -44,9 +44,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </Link>
         </div>
 
-        {/* Navigation Links */}
-        <nav className="p-3 space-y-0.5 flex-1">
-          <div className="px-3 py-1.5 text-[10px] uppercase font-bold tracking-wider text-neutral-400">
+        {/* Navigation Links (Horizontal swipe on mobile, vertical sidebar on desktop) */}
+        <nav 
+          className="p-2 sm:p-3 flex md:flex-col overflow-x-auto no-scrollbar gap-1 md:gap-0 md:space-y-0.5 shrink-0 border-b md:border-b-0 border-neutral-200"
+          style={{ WebkitOverflowScrolling: 'touch' }}
+        >
+          <div className="hidden md:block px-3 py-1.5 text-[10px] uppercase font-bold tracking-wider text-neutral-400">
             Menu
           </div>
           {navItems.map((item) => {
@@ -56,13 +59,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors ${
+                className={`flex items-center gap-2 px-3 py-1.5 sm:py-2 rounded-lg text-xs font-medium transition-colors whitespace-nowrap shrink-0 ${
                   isActive
-                    ? 'bg-neutral-100 text-neutral-900 font-semibold'
+                    ? 'bg-neutral-900 text-white font-semibold shadow-2xs md:bg-neutral-100 md:text-neutral-900'
                     : 'text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900'
                 }`}
               >
-                <Icon size={16} className={isActive ? 'text-neutral-900' : 'text-neutral-500'} />
+                <Icon size={15} className={isActive ? 'text-white md:text-neutral-900' : 'text-neutral-500'} />
                 <span>{item.label}</span>
               </Link>
             );
@@ -70,7 +73,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </nav>
 
         {/* Direct Link to Storefront */}
-        <div className="p-3 border-t border-neutral-200">
+        <div className="hidden md:block p-3 border-t border-neutral-200">
           <Link
             href="/shop"
             target="_blank"
